@@ -29,15 +29,15 @@ import { type User } from '../data/schema'
 
 const formSchema = z
   .object({
-    firstName: z.string().min(1, 'First Name is required.'),
-    lastName: z.string().min(1, 'Last Name is required.'),
-    username: z.string().min(1, 'Username is required.'),
-    phoneNumber: z.string().min(1, 'Phone number is required.'),
+    firstName: z.string().min(1, 'Primeiro nome é obrigatório.'),
+    lastName: z.string().min(1, 'Sobrenome é obrigatório.'),
+    username: z.string().min(1, 'Nome de usuário é obrigatório.'),
+    phoneNumber: z.string().min(1, 'Telefone é obrigatório.'),
     email: z.email({
-      error: (iss) => (iss.input === '' ? 'Email is required.' : undefined),
+      error: (iss) => (iss.input === '' ? 'E-mail é obrigatório.' : undefined),
     }),
     password: z.string().transform((pwd) => pwd.trim()),
-    role: z.string().min(1, 'Role is required.'),
+    role: z.string().min(1, 'Cargo é obrigatório.'),
     confirmPassword: z.string().transform((pwd) => pwd.trim()),
     isEdit: z.boolean(),
   })
@@ -47,7 +47,7 @@ const formSchema = z
       return data.password.length > 0
     },
     {
-      message: 'Password is required.',
+      message: 'Senha é obrigatória.',
       path: ['password'],
     }
   )
@@ -57,7 +57,7 @@ const formSchema = z
       return password.length >= 8
     },
     {
-      message: 'Password must be at least 8 characters long.',
+      message: 'A senha deve ter pelo menos 8 caracteres.',
       path: ['password'],
     }
   )
@@ -67,7 +67,7 @@ const formSchema = z
       return /[a-z]/.test(password)
     },
     {
-      message: 'Password must contain at least one lowercase letter.',
+      message: 'A senha deve conter pelo menos uma letra minúscula.',
       path: ['password'],
     }
   )
@@ -77,7 +77,7 @@ const formSchema = z
       return /\d/.test(password)
     },
     {
-      message: 'Password must contain at least one number.',
+      message: 'A senha deve conter pelo menos um número.',
       path: ['password'],
     }
   )
@@ -87,7 +87,7 @@ const formSchema = z
       return password === confirmPassword
     },
     {
-      message: "Passwords don't match.",
+      message: 'As senhas não coincidem.',
       path: ['confirmPassword'],
     }
   )
@@ -145,10 +145,10 @@ export function UsersActionDialog({
     >
       <DialogContent className='sm:max-w-lg'>
         <DialogHeader className='text-start'>
-          <DialogTitle>{isEdit ? 'Edit User' : 'Add New User'}</DialogTitle>
+          <DialogTitle>{isEdit ? 'Editar Usuário' : 'Adicionar Novo Usuário'}</DialogTitle>
           <DialogDescription>
-            {isEdit ? 'Update the user here. ' : 'Create new user here. '}
-            Click save when you&apos;re done.
+            {isEdit ? 'Atualize o usuário aqui. ' : 'Crie um novo usuário aqui. '}
+            Clique em salvar quando terminar.
           </DialogDescription>
         </DialogHeader>
         <div className='h-[26.25rem] w-[calc(100%+0.75rem)] overflow-y-auto py-1 pe-3'>
@@ -164,7 +164,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      First Name
+                      Primeiro Nome
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -184,7 +184,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      Last Name
+                      Sobrenome
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -204,7 +204,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      Username
+                      Nome de usuário
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -222,7 +222,7 @@ export function UsersActionDialog({
                 name='email'
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
-                    <FormLabel className='col-span-2 text-end'>Email</FormLabel>
+                    <FormLabel className='col-span-2 text-end'>E-mail</FormLabel>
                     <FormControl>
                       <Input
                         placeholder='john.doe@gmail.com'
@@ -240,7 +240,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      Phone Number
+                      Telefone
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -258,11 +258,11 @@ export function UsersActionDialog({
                 name='role'
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
-                    <FormLabel className='col-span-2 text-end'>Role</FormLabel>
+                    <FormLabel className='col-span-2 text-end'>Cargo</FormLabel>
                     <SelectDropdown
                       defaultValue={field.value}
                       onValueChange={field.onChange}
-                      placeholder='Select a role'
+                      placeholder='Selecione um cargo'
                       className='col-span-4'
                       items={roles.map(({ label, value }) => ({
                         label,
@@ -279,7 +279,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      Password
+                      Senha
                     </FormLabel>
                     <FormControl>
                       <PasswordInput
@@ -298,7 +298,7 @@ export function UsersActionDialog({
                 render={({ field }) => (
                   <FormItem className='grid grid-cols-6 items-center space-y-0 gap-x-4 gap-y-1'>
                     <FormLabel className='col-span-2 text-end'>
-                      Confirm Password
+                      Confirmar Senha
                     </FormLabel>
                     <FormControl>
                       <PasswordInput
@@ -317,7 +317,7 @@ export function UsersActionDialog({
         </div>
         <DialogFooter>
           <Button type='submit' form='user-form'>
-            Save changes
+            Salvar alterações
           </Button>
         </DialogFooter>
       </DialogContent>
