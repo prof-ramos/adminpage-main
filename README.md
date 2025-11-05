@@ -1,40 +1,40 @@
-# Shadcn Admin Dashboard
+# Painel de Administração Shadcn
 
-Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
+Interface de Painel de Administração desenvolvida com Shadcn e Vite. Construída com responsividade e acessibilidade em mente.
 
 ![alt text](public/images/shadcn-admin.png)
 
-I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
+Tenho criado interfaces de painéis de administração no trabalho e para meus projetos pessoais. Sempre quis fazer uma coleção reutilizável de UI de painel para projetos futuros; e aqui está agora. Embora eu tenha criado alguns componentes personalizados, parte do código foi adaptado diretamente dos exemplos do ShadcnUI.
 
-> This is not a starter project (template) though. I'll probably make one in the future.
+> No entanto, este não é um projeto inicial (template). Provavelmente farei um no futuro.
 
-## Features
+## Recursos
 
-- Light/dark mode
-- Responsive
-- Accessible
-- With built-in Sidebar component
-- Global search command
-- 10+ pages
-- Extra custom components
-- RTL support
+- Modo claro/escuro
+- Responsivo
+- Acessível
+- Com componente Sidebar integrado
+- Comando de busca global
+- Mais de 10 páginas
+- Componentes personalizados extras
+- Suporte RTL
 
 <details>
-<summary>Customized Components (click to expand)</summary>
+<summary>Componentes Personalizados (clique para expandir)</summary>
 
-This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements. These customized components differ from the original Shadcn UI versions.
+Este projeto usa componentes Shadcn UI, mas alguns foram ligeiramente modificados para melhor suporte RTL (direita para esquerda) e outras melhorias. Esses componentes personalizados diferem das versões originais do Shadcn UI.
 
-If you want to update components using the Shadcn CLI (e.g., `npx shadcn@latest add <component>`), it's generally safe for non-customized components. For the listed customized ones, you may need to manually merge changes to preserve the project's modifications and avoid overwriting RTL support or other updates.
+Se você quiser atualizar componentes usando o Shadcn CLI (por exemplo, `npx shadcn@latest add <componente>`), geralmente é seguro para componentes não personalizados. Para os personalizados listados, pode ser necessário mesclar as alterações manualmente para preservar as modificações do projeto e evitar sobrescrever o suporte RTL ou outras atualizações.
 
-> If you don't require RTL support, you can safely update the 'RTL Updated Components' via the Shadcn CLI, as these changes are primarily for RTL compatibility. The 'Modified Components' may have other customizations to consider.
+> Se você não precisar de suporte RTL, pode atualizar com segurança os 'Componentes Atualizados para RTL' via Shadcn CLI, pois essas alterações são principalmente para compatibilidade RTL. Os 'Componentes Modificados' podem ter outras personalizações a considerar.
 
-### Modified Components
+### Componentes Modificados
 
 - scroll-area
 - sonner
 - separator
 
-### RTL Updated Components
+### Componentes Atualizados para RTL
 
 - alert-dialog
 - calendar
@@ -47,71 +47,71 @@ If you want to update components using the Shadcn CLI (e.g., `npx shadcn@latest 
 - sidebar
 - switch
 
-**Notes:**
+**Observações:**
 
-- **Modified Components**: These have general updates, potentially including RTL adjustments.
-- **RTL Updated Components**: These have specific changes for RTL language support (e.g., layout, positioning).
-- For implementation details, check the source files in `src/components/ui/`.
-- All other Shadcn UI components in the project are standard and can be safely updated via the CLI.
+- **Componentes Modificados**: Possuem atualizações gerais, potencialmente incluindo ajustes RTL.
+- **Componentes Atualizados para RTL**: Possuem alterações específicas para suporte a idiomas RTL (por exemplo, layout, posicionamento).
+- Para detalhes de implementação, verifique os arquivos fonte em `src/components/ui/`.
+- Todos os outros componentes Shadcn UI no projeto são padrão e podem ser atualizados com segurança via CLI.
 
 </details>
 
-## Tech Stack
+## Stack Tecnológica
 
 **UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
 
-**Build Tool:** [Vite](https://vitejs.dev/)
+**Ferramenta de Build:** [Vite](https://vitejs.dev/)
 
-**Routing:** [TanStack Router](https://tanstack.com/router/latest)
+**Roteamento:** [TanStack Router](https://tanstack.com/router/latest)
 
-**Type Checking:** [TypeScript](https://www.typescriptlang.org/)
+**Verificação de Tipo:** [TypeScript](https://www.typescriptlang.org/)
 
-**Linting/Formatting:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
+**Linting/Formatação:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
 
-**Icons:** [Lucide Icons](https://lucide.dev/icons/), [Tabler Icons](https://tabler.io/icons) (Brand icons only)
+**Ícones:** [Lucide Icons](https://lucide.dev/icons/), [Tabler Icons](https://tabler.io/icons) (Apenas ícones de marca)
 
-**Auth (partial):** [Clerk](https://go.clerk.com/GttUAaK)
+**Autenticação (parcial):** [Clerk](https://go.clerk.com/GttUAaK)
 
-## Run Locally
+## Executar Localmente
 
-Clone the project
+Clone o projeto
 
 ```bash
   git clone https://github.com/satnaing/shadcn-admin.git
 ```
 
-Go to the project directory
+Vá para o diretório do projeto
 
 ```bash
   cd shadcn-admin
 ```
 
-Install dependencies
+Instale as dependências
 
 ```bash
   pnpm install
 ```
 
-Start the server
+Inicie o servidor
 
 ```bash
   pnpm run dev
 ```
 
-## Sponsoring this project ❤️
+## Patrocinando este projeto ❤️
 
-If you find this project helpful or use this in your own work, consider [sponsoring me](https://github.com/sponsors/satnaing) to support development and maintenance. You can [buy me a coffee](https://buymeacoffee.com/satnaing) as well. Don’t worry, every penny helps. Thank you! 🙏
+Se você achar este projeto útil ou usá-lo em seu próprio trabalho, considere [me patrocinar](https://github.com/sponsors/satnaing) para apoiar o desenvolvimento e manutenção. Você também pode [me pagar um café](https://buymeacoffee.com/satnaing). Não se preocupe, cada centavo ajuda. Obrigado! 🙏
 
-For questions or sponsorship inquiries, feel free to reach out at [contact@satnaing.dev](mailto:contact@satnaing.dev).
+Para perguntas ou consultas sobre patrocínio, sinta-se à vontade para entrar em contato em [contact@satnaing.dev](mailto:contact@satnaing.dev).
 
-### Current Sponsor
+### Patrocinador Atual
 
-- [Clerk](https://go.clerk.com/GttUAaK) - for backing the implementation of Clerk in this project
+- [Clerk](https://go.clerk.com/GttUAaK) - por apoiar a implementação do Clerk neste projeto
 
-## Author
+## Autor
 
-Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
+Criado com 🤍 por [@satnaing](https://github.com/satnaing)
 
-## License
+## Licença
 
-Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
+Licenciado sob a [Licença MIT](https://choosealicense.com/licenses/mit/)
